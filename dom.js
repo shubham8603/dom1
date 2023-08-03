@@ -90,7 +90,7 @@ header.style.borderBottom='solid 4px #ccc';
 
 //trying to access by classname
 var items= document.getElementsByClassName('list-group-item');
-items[2].style.backgroundColor ='GREEN';
+//items[2].style.backgroundColor ='GREEN';
 for(var i=0;i<items.length;i++)
 {
     items[i].style.fontWeight ='bold';
@@ -104,3 +104,24 @@ for(var i=0;i<Items2.length;i++)
 {
     Items2[i].style.fontWeight ='bold';
 }
+
+
+//trying to access by querySelector
+
+
+
+var secondItem=document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor='green';
+var thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.remove(thirdItem);
+
+
+//trying to access by querySelectorAll
+
+
+/*var odd=document.querySelectorAll('li:nth-child(odd)');
+for(var i=0;i<odd.length;i++)
+{
+    odd[i].style.color ='green';
+      
+}*/

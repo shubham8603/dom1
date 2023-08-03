@@ -88,10 +88,19 @@ subheading.style.color='green';
 var header=document.querySelector('#main-header');
 header.style.borderBottom='solid 4px #ccc';
 
-
+//trying to access by classname
 var items= document.getElementsByClassName('list-group-item');
 items[2].style.backgroundColor ='GREEN';
 for(var i=0;i<items.length;i++)
 {
     items[i].style.fontWeight ='bold';
+}
+
+//trying to access by tagname
+
+var Items2= document.getElementsByTagName('li');
+
+for(var i=0;i<Items2.length;i++)
+{
+    Items2[i].style.fontWeight ='bold';
 }

@@ -246,6 +246,8 @@ e.preventDefault();
 var newItem = document.getElementById('item').value;
 var newItem2 = document.getElementById('item2').value;
 
+
+
 //create new li element
 var li = document.createElement('li');
 
@@ -256,6 +258,7 @@ li.className='list-group-item';
 
 
 li.appendChild(document.createTextNode(newItem+" "+newItem2));
+
 
 //create delete button element
 
@@ -279,7 +282,7 @@ li.appendChild(deleteBtn);
 //append li to list
 
 itemList.appendChild(li);
-
+saveItemsToLocalStorage();
 
 }
 
@@ -293,6 +296,7 @@ if(e.target.classList.contains('delete')){
 
         var li=e.target.parentElement;
         itemList.removeChild(li);
+        saveItemsToLocalStorage();
     }
 }
 
@@ -323,4 +327,22 @@ function filterItems(e){
 
     });
 }
+
+// Function to save items to local storage
+function saveItemsToLocalStorage() {
+    var items = itemList.innerHTML;
+    localStorage.setItem('items', items);
+  }
+  
+  // Load items from local storage when the page loads
+  function loadItemsFromLocalStorage() {
+    var items = localStorage.getItem('items');
+    if (items) {
+      itemList.innerHTML = items;
+    }
+  }
+  
+  // Load items from local storage when the page loads
+  loadItemsFromLocalStorage();
+  
 
